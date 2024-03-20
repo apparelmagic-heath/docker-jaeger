@@ -12,6 +12,12 @@ COPY --from=all-in-one /opt/jaeger/sqlscripts /opt/jaeger/sqlscripts
 ENV SPAN_STORAGE_TYPE grpc-plugin
 WORKDIR /opt/jaeger
 
+# Collector OTLP gRPC
+EXPOSE 4317
+
+# Collector OTLP HTTP
+EXPOSE 4318
+
 EXPOSE 14250
 EXPOSE 14268
 EXPOSE 14269
